@@ -1,0 +1,10 @@
+[package]
+name = "sherbet"
+version = "0.0.0"
+edition = "2021"
+
+[[bin]]
+name = "sherbet"
+path = "main.rs"
+
+[dependencies]

@@ -1,0 +1,13 @@
+lib.path = "main.rs"
+
+[package]
+name = "morojenoye"
+description = """
+morojenoye
+"""
+version = "0.0.1"
+
+license = "Apache-2.0"
+edition = "2021"
+
+[dependencies]

@@ -1,0 +1,1 @@
+workspace = { members = ["morojenoye", "sherbet"], resolver = "2" }
