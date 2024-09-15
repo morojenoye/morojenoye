@@ -9,3 +9,6 @@ version = "0.0.1"
 [[package]]
 name = "sherbet"
 version = "0.0.0"
+dependencies = [
+ "morojenoye",
+]

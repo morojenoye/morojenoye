@@ -8,3 +8,4 @@ name = "sherbet"
 path = "main.rs"
 
 [dependencies]
+morojenoye = { version = "0.0.1", path = "../morojenoye" }

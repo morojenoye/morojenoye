@@ -2,6 +2,7 @@
 #![no_std]
 
 use core::{arch::asm, panic::PanicInfo};
+use morojenoye::arch::setup_panic;
 
 #[panic_handler]
 fn panic(_panic: &PanicInfo<'_>) -> ! {
@@ -18,4 +19,7 @@ unsafe fn start() {
 		".option pop"
 	);
 	asm!("la sp, _stack_0");
+
+	setup_panic();
+	loop {}
 }
