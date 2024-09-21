@@ -2,7 +2,7 @@
 #![no_std]
 
 use core::{arch::asm, panic::PanicInfo};
-use morojenoye::arch::panic;
+use morojenoye::panic;
 
 #[panic_handler]
 fn panic(_panic: &PanicInfo<'_>) -> ! {

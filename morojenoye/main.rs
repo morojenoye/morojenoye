@@ -1,5 +1,5 @@
 #![no_std]
 
-pub mod arch;
+mod arch;
 pub mod interrupts;
 pub mod panic;
