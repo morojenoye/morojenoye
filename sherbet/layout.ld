@@ -16,11 +16,11 @@ SECTIONS
 	.text _stack_0 : {
 		* ( .text.start )
 		. = ALIGN( 8 );
-		* ( .text.start_panic )
+		* ( .rodata .rodata.* )
 		. = ALIGN( 8 );
 		* ( .text .text.* )
-		. = ALIGN( 8 );
-		* ( .rodata .rodata.* )
+		. = ALIGN( 256 );
+		* ( .text.interrupt )
 		. = ALIGN( 8 );
 	} > R0
 

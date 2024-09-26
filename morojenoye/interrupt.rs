@@ -1,4 +1,6 @@
-use {crate::arch::interrupt, core::marker::PhantomData};
+pub use trapframe::init as setup;
+
+use {crate::arch::interrupt, core::marker::PhantomData, trapframe::TrapFrame};
 
 pub struct Guard {
 	inner: PhantomData<*mut ()>,
@@ -15,4 +17,9 @@ pub fn block() -> Guard {
 	let flags = unsafe { interrupt::block() };
 	let inner = PhantomData;
 	Guard { inner, flags }
+}
+
+#[no_mangle]
+extern "C" fn interrupt(_: &mut TrapFrame) {
+	loop {}
 }

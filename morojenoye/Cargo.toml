@@ -11,3 +11,4 @@ license = "Apache-2.0"
 edition = "2021"
 
 [dependencies]
+trapframe = { git = "https://github.com/morojenoye/trapframe.git" }

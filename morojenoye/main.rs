@@ -2,4 +2,3 @@
 
 mod arch;
 pub mod interrupt;
-pub mod panic;
