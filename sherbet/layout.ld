@@ -15,29 +15,22 @@ SECTIONS
 {
 	.text _stack_0 : {
 		* ( .text.start )
-		. = ALIGN( 8 );
 		* ( .rodata .rodata.* )
-		. = ALIGN( 8 );
 		* ( .text .text.* )
 		. = ALIGN( 256 );
 		* ( .text.interrupt )
-		. = ALIGN( 8 );
 	} > R0
 
 	.data : {
 		PROVIDE( __global_pointer$ = . + 2K );
 		* ( .sdata .sdata.* )
-		. = ALIGN( 8 );
 		* ( .data .data.* )
-		. = ALIGN( 8 );
 	} > R0
 
 	.wipe ( NOLOAD ) : {
 		_wipe_0 = .;
 		* ( .sbss .sbss.* )
-		. = ALIGN( 8 );
 		* ( .bss .bss.* )
-		. = ALIGN( 8 );
 		_wipe_1 = .;
 	} > R0
 }

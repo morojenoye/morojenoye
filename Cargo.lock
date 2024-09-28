@@ -46,7 +46,7 @@ dependencies = [
 [[package]]
 name = "trapframe"
 version = "0.10.0"
-source = "git+https://github.com/morojenoye/trapframe.git#3024ca4746cc299659ebd2fbc3a239bdf95db94f"
+source = "git+https://github.com/morojenoye/trapframe.git#43c419e1e6199149112e74ee34ab355faa30df6d"
 dependencies = [
  "raw-cpuid",
  "x86_64",
