@@ -1,3 +1,5 @@
 set architecture riscv:rv64
-file target/riscv64gc-unknown-none-elf/debug/sherbet
+file target/riscv64imac-unknown-none-elf/debug/sherbet
 target remote :1234
+set disassemble-next-line on
+b main
