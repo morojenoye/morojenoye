@@ -1,8 +1,18 @@
-use {crate::interrupt, core::arch::asm};
+use core::arch::{asm, global_asm};
+
+use crate::interrupt;
 
 extern "Rust" {
 	fn main(a0: usize, a1: usize) -> !;
 }
+
+global_asm!(
+	".section .text.start",
+	".globl start",
+	"start:",
+	"la sp, _stack_0",
+	"j setup",
+);
 
 // Table 18. HSM Hart Start Register State
 // +---------------+-----------------------------------+
@@ -16,16 +26,13 @@ extern "Rust" {
 // | All other registers remain in an undefined state. |
 // +---------------+-----------------------------------+
 #[no_mangle]
-#[link_section = ".text.start"]
-unsafe fn start(a0: usize, a1: usize) {
+unsafe fn setup(a0: usize, a1: usize) {
 	asm!(
 		".option push",
 		".option norelax",
 		"la gp, __global_pointer$",
 		".option pop"
 	);
-	asm!("la sp, _stack_0");
-
 	interrupt::setup();
 	main(a0, a1);
 }
