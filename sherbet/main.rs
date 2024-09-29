@@ -10,6 +10,6 @@ fn panic(_panic: &PanicInfo<'_>) -> ! {
 }
 
 #[no_mangle]
-fn main() -> ! {
+fn main(a0: usize, a1: usize) -> ! {
 	loop {}
 }

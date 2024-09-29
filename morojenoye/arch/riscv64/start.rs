@@ -1,5 +1,9 @@
 use {crate::interrupt, core::arch::asm};
 
+extern "Rust" {
+	fn main(a0: usize, a1: usize) -> !;
+}
+
 // Table 18. HSM Hart Start Register State
 // +---------------+-----------------------------------+
 // | Register Name | Register Value                    |
@@ -13,7 +17,7 @@ use {crate::interrupt, core::arch::asm};
 // +---------------+-----------------------------------+
 #[no_mangle]
 #[link_section = ".text.start"]
-unsafe fn start() {
+unsafe fn start(a0: usize, a1: usize) {
 	asm!(
 		".option push",
 		".option norelax",
@@ -23,8 +27,5 @@ unsafe fn start() {
 	asm!("la sp, _stack_0");
 
 	interrupt::setup();
-	extern "Rust" {
-		fn main() -> !;
-	}
-	main();
+	main(a0, a1);
 }
