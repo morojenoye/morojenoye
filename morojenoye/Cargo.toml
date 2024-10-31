@@ -12,7 +12,12 @@ edition = "2021"
 
 [dependencies]
 mmio_sifive_uart = { git = "https://github.com/morojenoye/mmio_sifive_uart.git" }
+embedded-alloc = "0.6"
 uart_16550 = "0.3.1"
 
 trapframe = { git = "https://github.com/morojenoye/trapframe.git" }
+riscv = { version = "0.12", features = [
+    "critical-section-single-hart",
+    "s-mode",
+], default-features = false }
 fdt = "0.1.5"
