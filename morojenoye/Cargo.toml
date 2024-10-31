@@ -11,4 +11,8 @@ license = "Apache-2.0"
 edition = "2021"
 
 [dependencies]
+mmio_sifive_uart = { git = "https://github.com/morojenoye/mmio_sifive_uart.git" }
+uart_16550 = "0.3.1"
+
 trapframe = { git = "https://github.com/morojenoye/trapframe.git" }
+fdt = "0.1.5"

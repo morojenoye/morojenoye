@@ -9,3 +9,4 @@ path = "main.rs"
 
 [dependencies]
 morojenoye = { version = "0.0.1", path = "../morojenoye" }
+fdt = "0.1.5"
